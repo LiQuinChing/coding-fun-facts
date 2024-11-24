@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 40px;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow: hidden; /* Prevents scrolling due to background animation */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+    position: relative; /* Needed for absolute positioning of the background animation */
+}
+
+h1 {
+    color: #0056b3;
+    text-align: center; /* Centers the header */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto; /* Centers the button */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#factDisplay {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0f7fa; /* Light blue background */
+    border: 2px solid #b3e5fc; /* Light blue border */
+    border-radius: 5px;
+    text-align: center; /* Centers the text inside the box */
+}
+
+@keyframes moveBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    animation: moveBackground 3s linear infinite;
+    z-index: -1; /* Ensures the animation is behind the content */
+}
