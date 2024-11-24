@@ -2,48 +2,62 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 40px;
-    color: #fff; /* Ensures text is visible on a dark background */
-    background: linear-gradient(to right, #000000, #00008B, #00BFFF, #C0C0C0); /* Black to dark blue to neon blue to silver */
-    overflow: hidden; /* Optional: Prevents scrolling if the content is larger than the screen */
+    background: linear-gradient(135deg, #000428, #004e92, #0f2027);
+    color: #e0e0e0;
+    overflow: hidden; /* Prevents scrolling due to background animation */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .container {
     width: 80%;
+    max-width: 800px;
     margin: auto;
-    background: #fff;
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 0 10px #007bff;
     position: relative; /* Needed for absolute positioning of the background animation */
+    color: #f4f4f4;
 }
 
 h1 {
-    color: #0056b3;
+    color: #1f77b4;
     text-align: center; /* Centers the header */
+    text-shadow: 0 0 8px #00d4ff;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
+    color: #f4f4f4;
+    background: linear-gradient(45deg, #00d4ff, #004e92);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: block;
     margin: 20px auto; /* Centers the button */
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+    transition: transform 0.3s, background 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(45deg, #00d4ff, #1f77b4);
+    transform: scale(1.1);
 }
 
 #factDisplay {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #e0f7fa; /* Light blue background */
-    border: 2px solid #b3e5fc; /* Light blue border */
-    border-radius: 5px;
+    padding: 15px;
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+    border: 2px solid #1f77b4;
+    border-radius: 8px;
     text-align: center; /* Centers the text inside the box */
+    color: #e0f7fa;
+    box-shadow: 0 0 10px rgba(31, 119, 180, 0.6);
+    font-size: 18px;
 }
 
 @keyframes moveBackground {
@@ -58,7 +72,10 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
-    animation: moveBackground 3s linear infinite;
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #004e92, #0f2027);
+    background-size: 400% 400%;
+    animation: moveBackground 6s linear infinite;
     z-index: -1; /* Ensures the animation is behind the content */
+    filter: blur(8px);
+    opacity: 0.8;
 }
