@@ -2,11 +2,10 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 40px;
-    background-color: #f4f4f4;
-    color: #333;
-    overflow: hidden; /* Prevents scrolling due to background animation */
+    color: #fff; /* Ensures text is visible on a dark background */
+    background: linear-gradient(to right, #000000, #00008B, #00BFFF, #C0C0C0); /* Black to dark blue to neon blue to silver */
+    overflow: hidden; /* Optional: Prevents scrolling if the content is larger than the screen */
 }
-
 .container {
     width: 80%;
     margin: auto;
